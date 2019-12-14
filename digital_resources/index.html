@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Digital resources</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="themes">
+						<h1>Цифровые ресурсы</h1>
+						<span style="position:absolute; left:0%; bottom:-55%; font-size: 0.5em;">
+							Theme: <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> |
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a></span>
+				</section>
+				<section  data-markdown><script type="text/template">
+					# 📝 Содержание
+					
+					* Reveal.js
+					* Социальная сеть программистов - [GitHub](https://github.com)
+					* Тренеровки программированию [CodeWars](https://www.codewars.com)
+					* Квест для изучения Python
+					* Дистанционная подготовка по информатике (contester) [informatics.msk.ru](http://informatics.msk.ru)
+					* Дистанционное обучение
+					* Youtube: [KvanTTT](https://github.com/KvanTTT)
+					* Tech Article Writer at [habr.com](https://habr.com/users/kvanttt/) and other blogs
+					
+					<aside class="notes">
+					Меня зовут Иван Кочуркин. В настоящий момент я работаю в Positive Technologies
+					над анализаторами исходных кодов.
+					
+					Также я участвую развитии Swiftify, веб-сервисе по конвертации кода Objective-C
+					в Swift. Там я занимаюсь доработкой Objective-C грамматик, конвертером и
+					улучшением производительности.
+					
+					Наконец, я веду активную деятельность на GitHub под ником KvanTTT и пишу статьи
+					на хабре на техническую тематику.
+					</aside>
+					</script></section>
+				<section>
+					<h1>Hello world!</h1>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint voluptas et dolorem. Veniam ea laborum vero ab recusandae quo? Architecto dicta autem deleniti! Non nemo distinctio quidem cumque magnam voluptas?</p>
+				</section>
+				<section>
+					<h2>Slide 2</h2>
+					<p>test text</p>
+				</section>
+				<section>
+					<section>
+						<h2>Vertical Slide</h2>
+						<p>Титульный слайд</p>
+					</section>
+					<section>
+						<h2>slide 2</h2>
+						<p>Слайд № 1 внизу</p>
+					</section>
+					<section>
+						<h2>slide 3</h2>
+						<p>Слайд № 2 внизу</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>	
+						<a href="http://gymn11.ru">Click me</a>
+					</section>
+				</section>
+				<section>Slide 4</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
