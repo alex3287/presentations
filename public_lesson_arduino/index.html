@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Arduino</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="themes">
+						<h2>Настройки</h2>
+						<br>
+						<p style="font-size: 0.4em; text-align: left">
+							выбор темы: <br>
+							<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+						</p>
+					</section>
+				<section>
+					<!-- <div style="margin-top: -10px; margin-left: -10px; padding-left: 0;">
+					<img src="img/logo.png" alt="" style="max-height: 100px; margin-left: -10px; padding-left: 0; border:0">
+					</div> -->
+					<div style="display: flex; justify-content: flex-end;"> 
+						<img src="img/Arduino_Nano.jpg" alt="" style="max-height: 150px;">
+					</div>
+					<h1>Arduino</h1>
+					<img src="img/Arduino_Mega.jpg" alt="" style="position:absolute; left:0%; top:95%; max-height: 300px;">
+					
+					<img src="img/arduino_uno.jpg" alt="" style="position:absolute; right:0%;; top:95%; max-height: 300px;">
+				</section>
+
+				<section id="fragments">
+					<div class="picture">
+						<img class="pic3" src="img/arduino_kit.jpg" alt="">
+						<img class="pic3" src="img/lego.jpg" alt="">
+					</div>			
+					<h2>Arduino & Lego</h2>
+							
+					<p class="fragment"> <b>Цена: </b>1 500 ₽ & 20 000 ₽</p>
+					<p class="fragment"> <b>Цена деталий </b></p>
+					<p class="fragment"> <b>Порог вхождения: </b>Сложно & Легко</p>
+				</section>
+				<section>
+					<h2>Проект</h2>
+					<h4>Умное освещение</h4>
+					 <ul>
+						 <li>
+							Светодиод загорается в зависимости от освещения. 
+						 </li>
+						 <li>
+							Светодиод загорается от шума и держится определенное время 
+						 </li>
+					 </ul>
+				</section>
+				<section>
+					<section>
+						<h1>Основные компоненты</h1>
+					</section>
+					<section>
+						<h2>RGB Светодиод</h2>
+						 <p style="text-align: justify">
+							Для отображения всей палитры оттенков вполне достаточно три цвета, используя RGB синтез (Red — красный, Green — зеленый, Blue — синий). RGB палитра используется не только в графических редакторах, но и в сайтостроении. Смешивая цвета в разной пропорции можно получить практически любой цвет. Преимущества RGB светодиодов в простоте конструкции, небольших габаритах и высоком КПД светоотдачи.
+						 </p>
+					</section>
+					<section>
+						<h2>Модуль микрофона</h2>
+					</section>
+					<section>
+						<h2>Фоторезистор</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Необходимое оборудование:</h2>
+					<ul>
+						<li>
+							Arduino Uno
+						</li>
+						<li>
+							Макетная плата	
+						</li>
+						<li>
+							Фоторезистор	
+						</li>
+						<li>
+							RGB Светодиод	
+						</li>
+						<li>
+						  Микрофон	
+						</li>
+						<li>
+							Резистор 10 кОм	
+						</li>
+						<li>
+							Провода различной длины	
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Схема проекта</h2>
+				</section>
+				<section>
+					<h2>Проверка оборудования</h2>
+				</section>
+				<!-- code project -->
+				<section>
+					<h2>Scetch</h2>
+					<pre><code class="hljs" data-trim data-line-numbers="1,4,8-9">
+#define ledPin 6
+#define ledPin2 3
+#define fr A0
+#define mic A2
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(fr, INPUT);
+  pinMode(mic, INPUT);
+  digitalWrite(ledPin, HIGH);
+  delay(500);
+  digitalWrite(ledPin, LOW);
+  
+}
+
+void loop() {
+  float fr_sing = analogRead(fr);
+  float mic_sing = analogRead(mic);
+  //Serial.println(fr_sing);
+  //delay(200);
+  //Serial.println(mic_sing);
+  
+  if (fr_sing < 800) {
+    analogWrite(ledPin, 256 - fr_sing/4);
+  }
+  else {
+    analogWrite(ledPin, 0);
+  }
+  if (mic_sing > 79) {
+    analogWrite(ledPin2, 255);
+    delay(3000);
+    analogWrite(ledPin2, 0);
+  }
+}
+					</code></pre>
+					<p>Код проекта находится в рабочей папке: Документы\Arduino\progs\scetch.io</p>
+				</section>
+				<section>
+					<h2>Настройка оборудования</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
