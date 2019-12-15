@@ -8,8 +8,7 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
 
@@ -30,10 +29,7 @@
 							 
 							<img height="200px" src="img/digital_resources.png" alt="">
 				
-						<span style="position:absolute; left:0%; top:95%; font-size: 0.5em;">
-							Theme: <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> |
-							<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a></span>
-							<aside class="notes">
+						<aside class="notes">
 								Меня зовут Александр Мангазеев. Я учитель информатики НМБОУ "Гимназия №11"
 								
 								Я занимаюсь изучением различных IT технологий. И сегодня мы поговорим на данную 
@@ -44,14 +40,16 @@
 					## 📝 Содержание
 					
 					* Презентация Reveal.js
+					* Презентация в [Prezi](http://prezi.com)
 					* Социальная сеть программистов - [GitHub](https://github.com)
 					* Тренеровки программированию [CodeWars](https://www.codewars.com)
-					* [Квест для изучения Python](http://quest.gymn11.ru)
+					* Google Colaboratory
 					* [Дистанционная подготовка по информатике](http://informatics.msk.ru) (contester)
-					* [Дистанционное обучение](http://www.do.gymn11.ru)
 					* [Робототехника](https://www.tinkercad.com)
+					* [Дистанционное обучение](http://www.do.gymn11.ru)
 					* Яндекс диск
-					* Youtube: [KvanTTT](https://github.com/KvanTTT)
+					* [Квест для изучения Python](http://test.gymn11.ru)
+					* [Youtube](https://www.youtube.com/watch?v=eqSunHWhN6M&list=PL_xGq5N0OxdvXInJaKK9H6WNfd8Mxcs3I)
 					
 					<aside class="notes">
 				  Меня зовут Александр Мангазеев. Я учитель информатики НМБОУ "Гимназия №11"
@@ -60,16 +58,60 @@
 					тему
 					</aside>
 					</script></section>
-				<section data-markdown>
-					## Презентация 
-					### Reveal.js
-					
-					* Открывается на любом компьютере, вне зависимости от операционной системы
-					* Не требует установки дополнительного ПО 
-					* Открывается не только на ПК, но и на планшетах и даже смартфонах
-				</section>
+					<section>
+						<section data-markdown>
+							## Презентация 
+							### Reveal.js
+							
+							* Открывается на любом компьютере, вне зависимости от операционной системы
+							* Не требует установки дополнительного ПО 
+							* Открывается не только на ПК, но и на планшетах и даже смартфонах
+						</section>
+						<section>
+							<section id="themes">
+								<h2>Themes</h2>
+								<p>
+									в reveal.js есть встроенные темы: <br>
+									<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black </a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White (default)</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+									<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+								</p>
+							</section>
+						</section>
+
+						<section>
+							<h2>Подсветка кода</h2>
+							<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+		import React, { useState } from 'react';
+		
+		function Example() {
+			const [count, setCount] = useState(0);
+		
+			return (
+				&lt;div&gt;
+					&lt;p&gt;You clicked {count} times&lt;/p&gt;
+					&lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+						Click me
+					&lt;/button&gt;
+				&lt;/div&gt;
+			);
+		}
+							</code></pre>
+							<p>Работает для любого языка программирования</p>
+									</section>
+
+					</section>
 				<section>
-					<h2>Slide 2</h2>
+					<h2>GitHub</h2>
 					<p>test text</p>
 				</section>
 				<section>
