@@ -47,19 +47,19 @@
 					</div>			
 					<h2>Arduino & Lego</h2>
 							
-					<p class="fragment"> <b>Цена: </b>1 500 ₽ & 20 000 ₽</p>
-					<p class="fragment"> <b>Цена деталий:</b> для проектов</p>
+					<p class="fragment"> <b>Цена: </b>1 500  & 20 000 </p>
+					<p class="fragment"> <b>Цена деталей:</b> для проектов</p>
 					<p class="fragment"> <b>Порог вхождения: </b>Сложно & Легко</p>
 				</section>
 				<section>
 					<h2>Проект</h2>
 					<h4>Умное освещение</h4>
 					 <ul>
-						 <li>
-							Светодиод загорается в зависимости от освещения. 
+						 <li style="text-align: justify;">
+							В этом эксперименте светодиод должен включаться при падении уровня освещенности ниже порога, заданного потенциометром. 
 						 </li>
-						 <li>
-							Светодиод загорается от шума и держится определенное время 
+						 <li style="text-align: justify;">
+							Светодиод загорается от шума и держится определенное время. 
 						 </li>
 					 </ul>
 				</section>
@@ -69,10 +69,7 @@
 					</section>
 					<section>
 						<h2>RGB Светодиод</h2>
-						
-						
 						 <p style="text-align: justify; font-size: 28px;">
-							
 								<img class="leftpic" src="img/rgb.jpg" alt="">
 							Для отображения всей палитры оттенков вполне достаточно три цвета (Red — красный, Green — зеленый, Blue — синий). 
 							<br>
@@ -116,6 +113,17 @@
 							Подключите одну ногу фоторезистора к 5 В, вторую к аналоговому пину Analog 0. После этого подключите резистор на 10 кОм между Analog 0 и землей. 
 						</p>
 					</section>
+					<section>
+						<h2>Потоецеометр</h2>
+						<p style="text-align: justify; font-size: 28px;">
+							<img class="leftpic pic3" src="img/potenciometr.jpg" alt="">
+							Потенциометры — это регулируемые делители напряжения, которые предназначены для регулирования напряжения при неизменной величине тока, и выполненные по типу переменного резистора.
+							<br>
+							Наиболее популярным стал переменный однооборотный резистор. Он широко применяется в радиотехнике в качестве регулятора громкости, и в других устройствах.
+							<br>
+							Подключите левую (или правую) ногу потенциометра к 5В, среднюю к аналоговому пину. Оставшуюся правую (или левую) подключите к земле. 
+						</p>
+					</section>
 				</section>
 				<section data-markdown>
 					###  Необходимое оборудование:
@@ -126,56 +134,74 @@
 					*	RGB Светодиод	
 					* Микрофон	
 					*	Резистор 10 кОм	
+					* Потенциометр
 					*	Провода различной длины
 				</section >
+
 				<section>
-					<h2>Схема проекта</h2>
+					<section>
+						<h2>Схема проекта</h2>
+					</section>
+					<section>
+						<img style="width: 70%;"	src="img/maket_schem.jpg" alt="">
+					</section>
 				</section>
+				
 				<section>
 					<h2>Проверка оборудования</h2>
 				</section>
 				<!-- code project -->
-				<section>
-					<h2>Scetch</h2>
-					<pre><code class="hljs" data-trim data-line-numbers="1,4,8-9">
-#define ledPin 6
-#define ledPin2 3
-#define fr A0
-#define mic A2
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);
-  pinMode(fr, INPUT);
-  pinMode(mic, INPUT);
-  digitalWrite(ledPin, HIGH);
-  delay(500);
-  digitalWrite(ledPin, LOW);
-  
-}
-
-void loop() {
-  float fr_sing = analogRead(fr);
-  float mic_sing = analogRead(mic);
-  //Serial.println(fr_sing);
-  //delay(200);
-  //Serial.println(mic_sing);
-  
-  if (fr_sing < 800) {
-    analogWrite(ledPin, 256 - fr_sing/4);
-  }
-  else {
-    analogWrite(ledPin, 0);
-  }
-  if (mic_sing > 79) {
-    analogWrite(ledPin2, 255);
-    delay(3000);
-    analogWrite(ledPin2, 0);
-  }
-}
-					</code></pre>
-					<p>Код проекта находится в рабочей папке: Документы\Arduino\progs\scetch.io</p>
-				</section>
+			<section>
+				<h2>Scetch</h2>
+				<pre><code class="hljs" data-trim data-line-numbers="1,7,11,20,21,25,31,39">
+					#define blue 6
+					#define green 3
+					#define fr A0
+					#define mic A2
+					#define pt A4
+					
+					void setup() {
+					 Serial.begin(9600);
+					 pinMode(blue, OUTPUT);
+					 pinMode(green, OUTPUT);
+					 //тестирование оборудования
+					 digitalWrite(blue, HIGH);
+					 delay(500);
+					 digitalWrite(blue, LOW);
+					 digitalWrite(green, HIGH);
+					 delay(500);
+					 digitalWrite(green, LOW);
+					}
+					
+					void loop() {
+						//считываем показания с датчиков
+						int fr_val = analogRead(fr);
+						int mic_val = analogRead(mic);
+						int pt_val = analogRead(pt);
+						//выводим данные на монитор портов 
+						//Serial.println(fr_val);
+						Serial.println(mic_val);
+						//Serial.println(pt_val);
+						Serial.println("-----------------");
+						delay(100);
+						//сравниваем показания фоторезистора и потонцеометра
+						bool dark = fr_val < pt_val;
+						if (dark) {
+							digitalWrite(blue, HIGH);
+						}
+						else {
+							digitalWrite(blue, LOW);
+						}
+						//обрабатываем данные с микрофона
+						if (mic_val > 48){
+							digitalWrite(green, HIGH);
+							delay(3000);
+							digitalWrite(green, LOW); 
+						}
+					}
+				</code></pre>
+				<p>Код проекта находится в рабочей папке: Документы\Arduino\progs\public_lesson</p>
+			</section>
 				<section data-markdown>
 					### Задание для самостоятельного решения
 
